@@ -1,11 +1,11 @@
 Pod::Spec.new do |spec|
     spec.name = 'SuperPlayer'
-    spec.version = '8.3'
+    spec.version = '8.3.1'
     spec.license = { :type => 'MIT' }
     spec.homepage = 'https://cloud.tencent.com/product/player'
     spec.authors = { 'annidyfeng' => 'annidyfeng@tencent.com' }
     spec.summary = '超级播放器'
-    spec.source = { :git => 'https://github.com/Xiaohui666/SuperPlayer_iOS.git', :tag => '8.3' }
+    spec.source = { :git => 'https://github.com/Xiaohui666/SuperPlayer_iOS.git', :tag => 'v8.3.1' }
 
     spec.ios.deployment_target = '8.0'
     spec.requires_arc = true
@@ -14,17 +14,18 @@ Pod::Spec.new do |spec|
     spec.dependency 'SDWebImage'
     spec.dependency 'Masonry'
     #spec.dependency 'MMLayout'
+    spec.dependency 'TXLiteAVSDK_Player'
 
     spec.static_framework = true
-    spec.default_subspec = 'Player'
+    spec.default_subspec = 'XHPlayer'
 
     spec.ios.framework    = ['SystemConfiguration','CoreTelephony', 'VideoToolbox', 'CoreGraphics', 'AVFoundation', 'Accelerate']
     spec.ios.library = 'z', 'resolv', 'iconv', 'stdc++', 'c++', 'sqlite3'
 
-    # spec.subspec "Core" do |s|
-    #     s.source_files = 'SuperPlayer/**/*.{h,m}'
-    #     s.resource = 'SuperPlayer/Resource/*'
-    # end
+     spec.subspec "XHPlayer" do |s|
+         s.source_files = 'Demo/TXLiteAVDemo/SuperPlayerKit/SuperPlayer/**/*.{h,m}'
+         s.resource = 'Demo/TXLiteAVDemo/SuperPlayerKit/SuperPlayer/Resource/*'
+     end
 #    spec.resource = 'SuperPlayer/Resource/*'
     
     spec.subspec "Player" do |s|
@@ -32,7 +33,7 @@ Pod::Spec.new do |spec|
         s.private_header_files = 'SuperPlayer/Utils/TXBitrateItemHelper.h', 'SuperPlayer/Views/SuperPlayerView+Private.h'
 #        s.resource = 'SuperPlayer/Resource/*'
 #如果要使用cocopods管理的TXLiteAVSDK_Player，就不注释这一行
-#        s.dependency 'TXLiteAVSDK_Player', '= 5.3.6001'
+#        s.dependency 'TXLiteAVSDK_Player'
 #如果要使用最新的TXLiteAVSDK_Player，就不注释这一行
         framework_path="../../../SDK/TXLiteAVSDK_Player.framework"
         s.pod_target_xcconfig={

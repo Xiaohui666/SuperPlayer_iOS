@@ -69,6 +69,10 @@ static UISlider * _volumeSlider;
     return self;
 }
 
+- (TXVodPlayer *)myVodPlayer{
+    return self.vodPlayer;
+}
+
 /**
  *  storyboard、xib加载playerView会调用此方法
  */
@@ -1482,6 +1486,9 @@ static UISlider * _volumeSlider;
                 self.autoPlay = YES; // 下次用户设置自动播放失效
                 [self pause];
             }
+            if (EvtID == PLAY_EVT_RCV_FIRST_I_FRAME && [self.delegate respondsToSelector:@selector(superPlayerDidLoadFirstFrame:)]){
+                [self.delegate superPlayerDidLoadFirstFrame:self];
+            }
             
             if (self.originalDuration > 0) {
                 // 当前是试看
@@ -1552,6 +1559,9 @@ static UISlider * _volumeSlider;
         } else if (EvtID == PLAY_EVT_CHANGE_RESOLUTION) {
             if (player.height != 0) {
                 self.videoRatio = (GLfloat)player.width / player.height;
+            }
+            if ([self.delegate respondsToSelector:@selector(superPlayerDidChangeResolution)]){
+                [self.delegate superPlayerDidChangeResolution];
             }
         }
      });
