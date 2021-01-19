@@ -10,7 +10,7 @@
 #import "SuperPlayerControlViewDelegate.h"
 #import "PlayerSlider.h"
 #import "SuperPlayerFastView.h"
-#import "MMMaterialDesignSpinner.h"
+#import "SPMMMaterialDesignSpinner.h"
 #import "SuperPlayerSettingsView.h"
 #import "SuperPlayerViewConfig.h"
 #import "SPVideoFrameDescription.h"

@@ -1802,9 +1802,9 @@ static UISlider * _volumeSlider;
     [self configTXPlayer];
 }
 
-- (MMMaterialDesignSpinner *)spinner {
+- (SPMMMaterialDesignSpinner *)spinner {
     if (!_spinner) {
-        _spinner = [[MMMaterialDesignSpinner alloc] init];
+        _spinner = [[SPMMMaterialDesignSpinner alloc] init];
         _spinner.lineWidth = 1;
         _spinner.duration  = 1;
         _spinner.hidden    = YES;

@@ -6,17 +6,17 @@
 //
 //
 
-#import "MMMaterialDesignSpinner.h"
+#import "SPMMMaterialDesignSpinner.h"
 
 static NSString *kMMRingStrokeAnimationKey = @"mmmaterialdesignspinner.stroke";
 static NSString *kMMRingRotationAnimationKey = @"mmmaterialdesignspinner.rotation";
 
-@interface MMMaterialDesignSpinner ()
+@interface SPMMMaterialDesignSpinner ()
 @property (nonatomic, readonly) CAShapeLayer *progressLayer;
 @property (nonatomic, readwrite) BOOL isAnimating;
 @end
 
-@implementation MMMaterialDesignSpinner
+@implementation SPMMMaterialDesignSpinner
 
 @synthesize progressLayer=_progressLayer;
 

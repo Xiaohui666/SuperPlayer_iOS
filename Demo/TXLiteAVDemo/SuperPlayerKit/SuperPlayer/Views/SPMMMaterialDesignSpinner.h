@@ -19,7 +19,7 @@ FOUNDATION_EXPORT const unsigned char MMMaterialDesignSpinnerVersionString[];
 /**
  *  A control similar to iOS' UIActivityIndicatorView modeled after Google's Material Design Activity spinner.
  */
-@interface MMMaterialDesignSpinner : UIView
+@interface SPMMMaterialDesignSpinner : UIView
 
 /** Sets the line width of the spinner's circle. */
 @property (nonatomic) CGFloat lineWidth;

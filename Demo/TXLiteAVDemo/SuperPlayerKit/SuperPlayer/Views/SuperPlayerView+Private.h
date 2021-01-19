@@ -66,7 +66,7 @@ typedef NS_ENUM(NSInteger, ButtonAction) {
 @property ButtonAction                               middleBlackBtnAction;
 
 /** 系统菊花 */
-@property (nonatomic, strong) MMMaterialDesignSpinner *spinner;
+@property (nonatomic, strong) SPMMMaterialDesignSpinner *spinner;
 
 @property (nonatomic, strong) UIButton               *lockTipsBtn;
 
